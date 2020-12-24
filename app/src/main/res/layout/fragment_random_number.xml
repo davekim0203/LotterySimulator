@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="lotteryTypeVM"
+            type="org.dave.lotterysimulatorwithstat.viewmodel.LotteryTypeViewModel" />
+        <variable
+            name="randomNumberVM"
+            type="org.dave.lotterysimulatorwithstat.viewmodel.RandomNumberViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.RandomNumberFragment">
+
+        <TextView
+            android:id="@+id/tv_random_numbers"
+            style="@style/TitleLotteryNumbersTextStyle"
+            android:text="@{randomNumberVM.generatedNumbers == null ? @string/default_numbers_text : randomNumberVM.generatedNumbers}"
+            app:autoSizeMaxTextSize="40sp"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/checkBox_get_past_matches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkbox_get_past_matches_text"
+            android:layout_marginStart="10dp"
+            android:enabled="@{randomNumberVM.pastMatchCheckboxEnabled}"
+            android:checked="@{randomNumberVM.isCheckboxChecked}"
+            android:onCheckedChanged="@{(compound, checked) -> randomNumberVM.onCheckedChanged(checked)}"
+            app:layout_constraintTop_toBottomOf="@+id/tv_random_numbers"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_past_matches_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="@{randomNumberVM.isPastListHidden ? View.VISIBLE : View.INVISIBLE}"
+            android:gravity="center"
+            app:pastMatchDescriptionText="@{lotteryTypeVM.selected}"
+            app:networkError="@{randomNumberVM.isNetworkError}"
+            app:layout_constraintBottom_toTopOf="@+id/btn_generate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_get_past_matches" />
+
+        <TextView
+            android:id="@+id/tv_number_of_wins"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:paddingBottom="5dp"
+            app:autoSizeMaxTextSize="17sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:text="@{randomNumberVM.numberOfWins == null ? @string/empty_string : @string/number_of_wins(randomNumberVM.numberOfWins)}"
+            android:visibility="@{randomNumberVM.isPastListHidden ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_get_past_matches" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/past_matches_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="@{randomNumberVM.isPastListHidden ? View.INVISIBLE : View.VISIBLE}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:pastMatches="@{randomNumberVM.pastMatches}"
+            app:layout_constraintBottom_toTopOf="@+id/btn_generate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_number_of_wins" />
+
+        <Button
+            android:id="@+id/btn_generate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generate_button"
+            android:onClick="@{() -> randomNumberVM.onGenerateButtonClicked(context)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

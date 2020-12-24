@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tab_titles">
+        <item>@string/tab_title_generate</item>
+        <item>@string/tab_title_simulation</item>
+        <item>@string/tab_title_stat</item>
+    </string-array>
+
+    <string-array name="lottery_types">
+        <item>@string/lottery_name_powerball</item>
+        <item>@string/lottery_name_mega_millions</item>
+        <item>@string/lottery_name_lotto_max</item>
+        <item>@string/lottery_name_lotto_649</item>
+    </string-array>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="pastWinningNumber"
+            type="org.dave.lotterysimulatorwithstat.adapter.PastWinningNumber"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_draw_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Nov 11"
+                android:textSize="14sp"
+                android:gravity="center"
+                app:drawDateMonth="@{pastWinningNumber}"/>
+
+            <TextView
+                android:id="@+id/tv_draw_date2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="2010"
+                android:textSize="14sp"
+                android:gravity="center"
+                app:drawDateYear="@{pastWinningNumber}"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_winning_numbers"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            tools:text="01 02 03 04 05 + 06"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            app:winningNumbers="@{pastWinningNumber}"/>
+
+        <TextView
+            android:id="@+id/tv_match_count"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            tools:text="3+"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_weight="1"
+            app:result="@{pastWinningNumber}"/>
+
+    </LinearLayout>
+</layout>

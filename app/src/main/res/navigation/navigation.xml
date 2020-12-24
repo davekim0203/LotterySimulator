@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/main_view_pager_fragment">
+
+    <fragment
+        android:id="@+id/main_view_pager_fragment"
+        android:name="org.dave.lotterysimulatorwithstat.fragment.MainViewPagerFragment"
+        tools:layout="@layout/fragment_main_view_pager">
+
+        <action
+            android:id="@+id/action_MainViewPagerFragment_to_TicketHistoryFragment"
+            app:destination="@id/ticket_history_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ticket_history_fragment"
+        android:name="org.dave.lotterysimulatorwithstat.fragment.TicketHistoryFragment"
+        android:label="@string/ticket_history_fragment_title"
+        tools:layout="@layout/fragment_ticket_history">
+    </fragment>
+
+</navigation>

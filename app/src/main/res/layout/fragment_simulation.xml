@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="simulationVM"
+            type="org.dave.lotterysimulatorwithstat.viewmodel.SimulationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.SimulationFragment">
+
+        <TextView
+            android:id="@+id/tv_winning_numbers"
+            style="@style/TitleLotteryNumbersTextStyle"
+            app:autoSizeMaxTextSize="40sp"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform"
+            app:simulationWinningNumbersText="@{simulationVM.winningNumbers}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/checkBox_fix_winning_numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{simulationVM.fixCheckboxEnabled}"
+            android:checked="@{simulationVM.isWinningNumbersFixed}"
+            android:onCheckedChanged="@{(compound, checked) -> simulationVM.onCheckedChanged(checked)}"
+            android:text="@string/checkbox_fix_winning_numbers_text"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_winning_numbers" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ticket_numbers_to_generate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/num_of_tickets_hint"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_winning_numbers">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_ticket_numbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:ems="5"
+                android:inputType="number"
+                android:maxLength="3"
+                android:imeOptions="actionDone"
+                android:text="@{simulationVM.numOfTickets >= 0 ? Integer.toString(simulationVM.numOfTickets) : @string/empty_string}"
+                android:onTextChanged="@{(text, start, before, count) -> simulationVM.onNumberOfTicketsTextChanged(text)}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/result_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ticket_numbers_to_generate">
+
+            <TextView
+                android:id="@+id/tv_results"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@{simulationVM.results}"
+                android:maxLines="1"
+                android:paddingHorizontal="10dp"
+                app:autoSizeMaxTextSize="23sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="Suspicious0dp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ticket_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:tickets="@{simulationVM.newTickets}"
+            app:layout_constraintBottom_toTopOf="@+id/button_simulate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/result_container" />
+
+        <Button
+            android:id="@+id/button_simulate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/simulate_button"
+            android:onClick="@{() -> simulationVM.onSimulateButtonClicked(context)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

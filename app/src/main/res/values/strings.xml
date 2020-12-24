@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Lottery Simulator</string>
+    <string name="empty_string" />
+
+    <!--  Lottery name  -->
+    <string name="lottery_name_powerball">Powerball</string>
+    <string name="lottery_name_mega_millions">Mega Millions</string>
+    <string name="lottery_name_lotto_max">Lotto Max</string>
+    <string name="lottery_name_lotto_649">Lotto 649</string>
+
+    <!--  Lottery short name  -->
+    <string name="lottery_short_name_powerball">P.B.</string>
+    <string name="lottery_short_name_mega_millions">M.M.</string>
+    <string name="lottery_short_name_lotto_max">Max</string>
+    <string name="lottery_short_name_lotto_649">649</string>
+
+    <!--  Tab titles  -->
+    <string name="tab_title_generate">Generate</string>
+    <string name="tab_title_simulation">Simulate</string>
+    <string name="tab_title_stat">Stat</string>
+
+    <!--  Copy numbers to clipboard  -->
+    <string name="menu_copy_to_clipboard">Copy to Clipboard</string>
+    <string name="toast_numbers_copied_to_clipboard">Numbers copied to clipboard</string>
+
+    <!--  MainViewPagerFragment  -->
+    <string name="menu_title_history">History</string>
+
+    <!--  RandomNumberFragment  -->
+    <string name="default_numbers_text">Your Numbers</string>
+    <string name="lottery_type_text">Which Lottery?</string>
+    <string name="generate_button">Generate</string>
+    <string name="checkbox_get_past_matches_text">Get Past Matches</string>
+    <string name="number_of_wins">Your numbers won %1$d times since Nov 2010</string>
+    <string name="network_error">Network Error</string>
+    <string name="api_not_available_for_lotto_max_and_649">Past winning numbers are not available for Lotto Max and Lotto 649</string>
+    <string name="past_matches_description">Past winning numbers with your numbers</string>
+    <string name="past_match_month_day">%1$s %2$s</string>
+    <string name="past_match_month_january">Jan</string>
+    <string name="past_match_month_february">Feb</string>
+    <string name="past_match_month_march">Mar</string>
+    <string name="past_match_month_april">Apr</string>
+    <string name="past_match_month_may">May</string>
+    <string name="past_match_month_june">Jun</string>
+    <string name="past_match_month_july">Jul</string>
+    <string name="past_match_month_august">Aug</string>
+    <string name="past_match_month_september">Sep</string>
+    <string name="past_match_month_october">Oct</string>
+    <string name="past_match_month_november">Nov</string>
+    <string name="past_match_month_december">Dec</string>
+
+    <!--  SimulationFragment  -->
+    <string name="simulate_button">Simulate</string>
+    <string name="simulation_results_button">Results</string>
+    <string name="start_simulation_text">Winning Numbers</string>
+    <string name="checkbox_fix_winning_numbers_text">Fix Winning Numbers</string>
+    <string name="num_of_tickets_hint"># of Tickets</string>
+    <string name="num_of_tickets_warning_dialog_title">Number of Tickets</string>
+    <string name="num_of_tickets_warning_dialog_message_no_number">Please enter number of tickets to generate.</string>
+    <string name="num_of_tickets_warning_dialog_message_greater_than_0">Please enter a number greater than 0.</string>
+    <string name="dialog_ok_button">OK</string>
+
+    <!--  StatFragment  -->
+    <string name="toggle_pie_chart">Pie</string>
+    <string name="toggle_bar_chart">Bar</string>
+    <string name="clear_graph_data_confirm_dialog_message">Are you sure you want to clear data for %1$s?</string>
+    <string name="clear_all_graph_data_confirm_dialog_message">Are you sure you want to clear data for all charts?</string>
+    <string name="error_dialog_title">Error</string>
+    <string name="lottery_type_error_dialog_message">Please select the lottery type</string>
+    <string name="menu_title_clear_chart_data">Clear Chart Data</string>
+    <string name="menu_title_clear_all_chart_data">Clear All Chart Data</string>
+    <string name="menu_title_include_no_payout">Include No Payout  </string>
+
+    <!--  BarChartFragment  -->
+    <string name="total_count">Total: %1$d</string>
+
+    <!--  ResultCount matchCount  -->
+    <string name="match_count_else">:(</string>
+    <string name="match_count_none_bonus">+</string>
+    <string name="match_count_one">1</string>
+    <string name="match_count_one_bonus">1+</string>
+    <string name="match_count_two">2</string>
+    <string name="match_count_two_bonus">2+</string>
+    <string name="match_count_three">3</string>
+    <string name="match_count_three_bonus">3+</string>
+    <string name="match_count_four">4</string>
+    <string name="match_count_four_bonus">4+</string>
+    <string name="match_count_five">5</string>
+    <string name="match_count_five_bonus">5+</string>
+    <string name="match_count_six">6</string>
+    <string name="match_count_six_bonus">6+</string>
+    <string name="match_count_seven">7</string>
+
+    <!--  TicketHistoryFragment  -->
+    <string name="ticket_history_fragment_title">Ticket History</string>
+    <string name="menu_title_clear">Clear</string>
+    <string name="clear_data_confirm_dialog_title">Clear Ticket History</string>
+    <string name="clear_data_confirm_dialog_message">Are you sure you want to clear history?</string>
+    <string name="clear_data_confirm_dialog_positive_button">Clear</string>
+    <string name="dialog_negative_button">Cancel</string>
+    <string name="info_dialog_title">Info</string>
+    <string name="info_dialog_message">10,000 tickets can be stored in database\n\nShort names:\n - PB = Powerball \n - MM = Mega Millions \n - MAX = Lotto Max \n - 649 = Lotto 649</string>
+    <string name="info_dialog_positive_button">OK</string>
+</resources>
