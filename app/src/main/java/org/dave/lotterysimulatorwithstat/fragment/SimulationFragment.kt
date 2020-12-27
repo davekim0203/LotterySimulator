@@ -139,7 +139,7 @@ class SimulationFragment : Fragment() {
         )
 
         val params: ViewGroup.LayoutParams = binding.tvResults.layoutParams
-        params.height = 130
+        params.height = 120
         binding.tvResults.layoutParams = params
     }
 

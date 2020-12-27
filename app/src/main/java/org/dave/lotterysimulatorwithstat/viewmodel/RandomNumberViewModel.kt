@@ -4,9 +4,9 @@ import android.content.Context
 import android.text.SpannableString
 import android.util.Log
 import androidx.core.text.HtmlCompat
+import androidx.core.text.isDigitsOnly
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import org.dave.lotterysimulatorwithstat.adapter.PastWinningNumber
 import org.dave.lotterysimulatorwithstat.database.LotteryType
@@ -155,7 +155,7 @@ class RandomNumberViewModel @ViewModelInject constructor(
 
     private fun getPowerballMatchCount(context: Context, newNumbers: Pair<List<Int>, Int>, winNums: String):
             Pair<SpannableString, Pair<Int, Boolean>> {
-        val winNumsInt = winNums.toListOfInt()
+        val winNumsInt = toListOfInts(winNums)
         val winNumsWithoutBonus = winNumsInt.subList(0, winNumsInt.size - 1)
         val winNumsBonus = winNumsInt[winNumsInt.size - 1]
 
@@ -209,8 +209,16 @@ class RandomNumberViewModel @ViewModelInject constructor(
 
     private fun getMegaMillionsMatchCount(context: Context, newNumbers: Pair<List<Int>, Int>, winNums: String, bonus: Int):
             Pair<SpannableString, Pair<Int, Boolean>> {
-        val winNumsInt = winNums.toListOfInt()
+        val winNumsInt = toListOfInts(winNums)
         return getResultUS(context, Pair(winNumsInt, bonus), newNumbers)
+    }
+
+    private fun toListOfInts(str: String): List<Int> {
+        return str.trim()
+            .split(" ")
+            .filter { it.isNotEmpty() }
+            .filter { it.isDigitsOnly() }
+            .map { it.toInt() }
     }
 
     private fun hidePastList() {

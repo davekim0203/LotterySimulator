@@ -9,15 +9,15 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "org.dave.lotterysimulatorwithstat"
-        minSdkVersion 21
+        minSdkVersion 22
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 5
+        versionName "1.4"
         testInstrumentationRunner "org.dave.lotterysimulatorwithstat.testUtil.CustomTestRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

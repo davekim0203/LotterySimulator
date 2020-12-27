@@ -149,12 +149,6 @@ fun getNewTicketWithResult(context: Context, type: LotteryType, winNums: Pair<Li
     }
 }
 
-fun String.toListOfInt() = trim()
-    .splitToSequence(' ')
-    .filter { it.isNotEmpty() }
-    .toList()
-    .map { it.toInt() }
-
 fun copyToClipboard(context: Context, text: String) {
     val clipboard: ClipboardManager =
         context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager

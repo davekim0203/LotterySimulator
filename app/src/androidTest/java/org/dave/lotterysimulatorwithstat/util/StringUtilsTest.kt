@@ -112,14 +112,6 @@ class StringUtilsTest {
         assertEquals(expected, actual.second)
     }
 
-    @Test
-    fun test_toListOfInt() {
-        val numbersInString = "01 02 03 11 12 13"
-        val actual = numbersInString.toListOfInt()
-        val expected = listOf(1, 2, 3, 11, 12, 13)
-        assertEquals(expected, actual)
-    }
-
     @UiThreadTest
     @Test
     fun test_copyToClipboard() {

@@ -31,7 +31,7 @@
     <string name="lottery_type_text">Which Lottery?</string>
     <string name="generate_button">Generate</string>
     <string name="checkbox_get_past_matches_text">Get Past Matches</string>
-    <string name="number_of_wins">Your numbers won %1$d times since Nov 2010</string>
+    <string name="number_of_wins">Your numbers won %1$d times last 10 years</string>
     <string name="network_error">Network Error</string>
     <string name="api_not_available_for_lotto_max_and_649">Past winning numbers are not available for Lotto Max and Lotto 649</string>
     <string name="past_matches_description">Past winning numbers with your numbers</string>
