@@ -11,13 +11,13 @@ android {
         applicationId "org.dave.lotterysimulatorwithstat"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 5
-        versionName "1.4"
+        versionCode 7
+        versionName "1.6"
         testInstrumentationRunner "org.dave.lotterysimulatorwithstat.testUtil.CustomTestRunner"
     }
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
