@@ -6,4 +6,5 @@
     android:maxLines="1"
     android:ellipsize="end"
     android:padding="16dp"
+    android:drawablePadding="10dp"
     android:textAppearance="?attr/textAppearanceSubtitle1"/>
