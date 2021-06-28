@@ -1,21 +1,25 @@
 # Lottery Simulator
 <a href='https://play.google.com/store/apps/details?id=org.dave.lotterysimulatorwithstat&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height="100"/></a>
 ## About Lottery Simulator
-Lottery Simulator is an app that can simulate lottery from US (Powerball and Mega Millions) and Canada (Lotto Max & Lotto 649) with stat.
+Lottery Simulator can simulate lottery from US (Powerball and Mega Millions) and Canada (Lotto Max & Lotto 649) with simple charts for statistics. Users can save ticket numbers generated from simulation and easily copy them to clipboard.
 
-You can generate your new numbers and check how many times these numbers have won before. You can save history of ticket numbers generated from simulation.
+Users can generate their lucky numbers and check how many times these numbers have won before. 
+
+<img alt='Get it on Google Play' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/simulate_numbers.png' height="450"/></a>
+<img alt='Get it on Google Play' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/pie_chart.png' height="450"/></a>
+<img alt='Get it on Google Play' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/bar_chart.png' height="450"/></a>
 
 ## Android Development
 This app includes:
 
  - Kotlin
  - MVVM architectural pattern
- - Room database
- - Data binding
- - Navigation Component
  - Retrofit 2
- - Material Design
  - Dependency Injection (Hilt)
+ - Room database
+ - Data Binding
+ - Navigation Component
+ - Material Design
  - Testing
    - JUnit
    - Espresso
