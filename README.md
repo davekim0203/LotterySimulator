@@ -5,9 +5,9 @@ Lottery Simulator can simulate lottery from US (Powerball and Mega Millions) and
 
 Users can generate their lucky numbers and check how many times these numbers have won before. 
 
-<img alt='Get it on Google Play' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/simulate_numbers.png' height="450"/></a>
-<img alt='Get it on Google Play' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/pie_chart.png' height="450"/></a>
-<img alt='Get it on Google Play' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/bar_chart.png' height="450"/></a>
+<img alt='Lottery simulator simulation' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/simulate_numbers.png' height="450"/></a>
+<img alt='Lottery simulator pie chart' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/pie_chart.png' height="450"/></a>
+<img alt='Lottery simulator bar chart' src='https://github.com/davekim0203/LotterySimulator/blob/master/screenshots/bar_chart.png' height="450"/></a>
 
 ## Android Development
 This app includes:
